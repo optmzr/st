@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Consolas:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -25,7 +25,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.0;
+static float chscale = 1.2;
 
 /*
  * word delimiter string
@@ -83,7 +83,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
+static const char *colorname[255] = {
 	/* solarized dark */
 	"#073642",  /*  0: black    */
 	"#dc322f",  /*  1: red      */
@@ -104,7 +104,7 @@ static const char *colorname[] = {
 };
 
 /* Terminal colors for alternate (light) palette */
-static const char *altcolorname[] = {
+static const char *altcolorname[255] = {
 	/* solarized light */
 	"#eee8d5",  /*  0: black    */
 	"#dc322f",  /*  1: red      */
@@ -195,7 +195,6 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
 	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
